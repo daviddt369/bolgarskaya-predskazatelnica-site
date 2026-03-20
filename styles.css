@@ -1014,6 +1014,20 @@ p {
     padding-top: 12px;
   }
 
+  h2 {
+    font-size: clamp(1.7rem, 8vw, 2.45rem);
+    line-height: 0.95;
+    letter-spacing: 0.025em;
+  }
+
+  .section-heading h2,
+  .contact-copy h2,
+  .manifesto-inner h2 {
+    max-width: 11ch;
+    margin-inline: auto;
+    text-wrap: balance;
+  }
+
   .topbar {
     flex-wrap: nowrap;
     justify-content: space-between;
