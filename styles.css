@@ -862,6 +862,17 @@ p {
 }
 
 @media (max-width: 980px) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body::before,
+  body::after,
+  .sparkles,
+  .aurora {
+    display: none;
+  }
+
   body::after {
     opacity: 0.16;
     mix-blend-mode: normal;
