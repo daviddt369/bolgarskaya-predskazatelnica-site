@@ -360,6 +360,38 @@
       image.srcset = `${encodeURI(source.small)} 420w, ${encodeURI(source.full)} ${source.fullWidth}w`;
     });
 
+    const galleryRing = document.querySelector('.gallery-ring');
+    const galleryCards = document.querySelectorAll('.gallery-card');
+
+    if (galleryRing && galleryCards.length) {
+      const applyGalleryLayout = () => {
+        let radius = 275;
+        let width = 180;
+        let height = 276;
+
+        if (window.innerWidth <= 760) {
+          radius = 188;
+          width = 138;
+          height = 214;
+        } else if (window.innerWidth <= 980) {
+          radius = 228;
+          width = 160;
+          height = 246;
+        }
+
+        galleryRing.style.width = `${width}px`;
+        galleryRing.style.height = `${height}px`;
+
+        galleryCards.forEach((card, index) => {
+          card.style.transform = `rotateY(${index * (360 / galleryCards.length)}deg) translateZ(${radius}px)`;
+          card.style.transitionDelay = `${(galleryCards.length - index) / 4}s`;
+        });
+      };
+
+      applyGalleryLayout();
+      window.addEventListener('resize', applyGalleryLayout);
+    }
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {

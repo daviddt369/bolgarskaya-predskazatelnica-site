@@ -635,8 +635,9 @@ p {
 }
 
 .gallery-stage {
-  perspective: none;
-  min-height: auto;
+  touch-action: none;
+  perspective: 1000px;
+  min-height: 360px;
   display: grid;
   place-items: center;
   overflow: visible;
@@ -648,18 +649,18 @@ p {
 
 .gallery-ring {
   position: relative;
-  width: min(100%, 980px);
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-  transform: none;
-  animation: none;
-  will-change: auto;
+  display: flex;
+  margin: auto;
+  width: 180px;
+  height: 276px;
+  transform-style: preserve-3d;
+  animation: spinRevert 25s linear infinite;
+  will-change: transform;
 }
 
 .gallery-card {
-  position: relative;
-  inset: auto;
+  position: absolute;
+  inset: 0;
   overflow: hidden;
   border-radius: 28px;
   border: 1px solid rgba(255, 236, 205, 0.18);
@@ -669,8 +670,7 @@ p {
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
   backface-visibility: hidden;
   contain: paint;
-  transform: none !important;
-  aspect-ratio: 0.82;
+  transition: transform 1s;
 }
 
 .gallery-card img {
@@ -806,6 +806,11 @@ p {
   to { transform: rotateX(-10deg) rotateY(360deg); }
 }
 
+@keyframes spinRevert {
+  from { transform: rotateY(360deg); }
+  to { transform: rotateY(0deg); }
+}
+
 @keyframes serviceSwing {
   0% { transform: perspective(900px) rotateY(-16deg) rotateX(3deg) translateY(0); }
   50% { transform: perspective(900px) rotateY(16deg) rotateX(-3deg) translateY(-3px); }
@@ -912,15 +917,14 @@ p {
   }
 
   .gallery-stage {
-    perspective: none;
-    min-height: auto;
+    perspective: 1000px;
+    min-height: 330px;
     overflow: visible;
   }
 
   .gallery-ring {
-    width: 100%;
-    height: auto;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 160px;
+    height: 246px;
   }
 
   .service-icon {
@@ -1074,15 +1078,14 @@ p {
   }
 
   .gallery-stage {
-    perspective: none;
-    min-height: auto;
+    perspective: 1000px;
+    min-height: 300px;
     overflow: visible;
   }
 
   .gallery-ring {
-    width: 100%;
-    height: auto;
-    grid-template-columns: 1fr;
+    width: 138px;
+    height: 214px;
   }
   .section.gallery {
     padding-bottom: 116px;
