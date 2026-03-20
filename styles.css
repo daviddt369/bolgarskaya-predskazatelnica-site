@@ -906,48 +906,44 @@ p {
 
   .gallery-stage {
     perspective: 1200px;
-    min-height: auto;
-    overflow-x: auto;
-    overflow-y: hidden;
-    display: block;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    scroll-snap-type: x mandatory;
-    padding: 8px 2px 4px;
+    min-height: 430px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    padding: 10px 0 6px;
   }
 
   .gallery-ring {
-    width: max-content;
-    height: auto;
-    display: flex;
-    gap: 16px;
-    padding: 10px 6px 20px;
-    animation: none;
-    transform: none;
-  }
-
-  .gallery-stage::-webkit-scrollbar {
-    display: none;
+    position: relative;
+    width: 250px;
+    height: 320px;
+    display: block;
+    padding: 0;
+    transform-style: preserve-3d;
+    animation: rotateRing 22s linear infinite;
   }
 
   .gallery-card {
-    position: relative;
-    inset: auto;
-    width: 220px;
-    height: 290px;
-    flex: 0 0 auto;
-    scroll-snap-align: center;
+    position: absolute;
+    inset: 0;
+    width: auto;
+    height: auto;
+    flex: none;
+    scroll-snap-align: none;
     transform-style: preserve-3d;
     backface-visibility: hidden;
     will-change: transform;
   }
 
-  .gallery-card:nth-child(odd) {
-    transform: perspective(1000px) rotateY(-13deg) rotateX(2deg) translateY(4px) !important;
-  }
+  .gallery-card:nth-child(1) { transform: rotateY(0deg) translateZ(290px) !important; }
+  .gallery-card:nth-child(2) { transform: rotateY(60deg) translateZ(290px) !important; }
+  .gallery-card:nth-child(3) { transform: rotateY(120deg) translateZ(290px) !important; }
+  .gallery-card:nth-child(4) { transform: rotateY(180deg) translateZ(290px) !important; }
+  .gallery-card:nth-child(5) { transform: rotateY(240deg) translateZ(290px) !important; }
+  .gallery-card:nth-child(6) { transform: rotateY(300deg) translateZ(290px) !important; }
 
-  .gallery-card:nth-child(even) {
-    transform: perspective(1000px) rotateY(13deg) rotateX(-2deg) translateY(-4px) !important;
+  .gallery-card img {
+    transform: translateZ(0);
   }
 
   .service-icon {
@@ -971,10 +967,10 @@ p {
   .reveal,
   .reveal-delay,
   .reveal-delay-2 {
-    opacity: 0;
+    opacity: 1;
     transform: none;
-    filter: blur(8px);
-    transition: opacity 0.65s ease, filter 0.65s ease;
+    filter: none;
+    transition: none;
   }
 
   .reveal.is-visible {
