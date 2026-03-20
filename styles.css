@@ -867,32 +867,66 @@ p {
   }
 
   body {
+    position: relative;
     background:
-      linear-gradient(180deg, rgba(11, 7, 16, 0.76), rgba(17, 11, 24, 0.84)),
-      url("./fon.webp") center top / cover no-repeat,
-      radial-gradient(circle at top, rgba(179, 118, 215, 0.13), transparent 30%),
-      radial-gradient(circle at 80% 18%, rgba(216, 176, 106, 0.1), transparent 24%),
+      linear-gradient(180deg, rgba(10, 7, 16, 0.46), rgba(17, 11, 24, 0.74)),
+      url("./fon.webp") center 14% / cover no-repeat,
+      radial-gradient(circle at top, rgba(179, 118, 215, 0.15), transparent 30%),
+      radial-gradient(circle at 80% 18%, rgba(216, 176, 106, 0.12), transparent 24%),
       linear-gradient(180deg, #0a0710 0%, #110b18 42%, #191023 100%);
   }
 
   body::before {
     position: absolute;
     inset: 0;
-    opacity: 0.18;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.28;
     background-image:
-      radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.08) 0 1px, transparent 2px),
-      radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 0 1px, transparent 2px),
-      radial-gradient(circle at 50% 80%, rgba(255, 255, 255, 0.06) 0 1px, transparent 2px);
-    background-size: 220px 220px, 300px 300px, 260px 260px;
+      radial-gradient(circle at 20% 30%, rgba(255, 241, 205, 0.18) 0 1px, transparent 2px),
+      radial-gradient(circle at 80% 20%, rgba(255, 241, 205, 0.14) 0 1px, transparent 2px),
+      radial-gradient(circle at 50% 80%, rgba(255, 241, 205, 0.12) 0 1px, transparent 2px);
+    background-size: 180px 180px, 240px 240px, 220px 220px;
   }
 
   body::after {
     display: none;
   }
 
-  .sparkles,
-  .aurora {
+  .sparkles {
+    position: absolute;
+    inset: 0;
+    display: block;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .spark {
+    animation-duration: 15s;
+    opacity: 0.72;
+  }
+
+  .spark::after {
     display: none;
+  }
+
+  .aurora {
+    display: block;
+    position: absolute;
+    z-index: 0;
+    filter: blur(42px);
+    opacity: 0.52;
+  }
+
+  .aurora-left {
+    top: 2%;
+    left: -18%;
+  }
+
+  .aurora-right {
+    top: 24%;
+    right: -18%;
   }
 
   .hero-grid,
