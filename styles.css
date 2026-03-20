@@ -906,45 +906,7 @@ p {
   }
 
   .gallery-stage {
-    perspective: 1400px;
-    min-height: 380px;
-    display: grid;
-    place-items: center;
-    overflow: hidden;
-    padding: 10px 0 6px;
-  }
-
-  .gallery-ring {
-    position: relative;
-    width: 220px;
-    height: 290px;
-    display: block;
-    padding: 0;
-    transform-style: preserve-3d;
-    animation: rotateRing 20s linear infinite;
-  }
-
-  .gallery-card {
-    position: absolute;
-    inset: 0;
-    width: auto;
-    height: auto;
-    flex: none;
-    scroll-snap-align: none;
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
-    will-change: transform;
-  }
-
-  .gallery-card:nth-child(1) { transform: rotateY(0deg) translateZ(250px) !important; }
-  .gallery-card:nth-child(2) { transform: rotateY(60deg) translateZ(250px) !important; }
-  .gallery-card:nth-child(3) { transform: rotateY(120deg) translateZ(250px) !important; }
-  .gallery-card:nth-child(4) { transform: rotateY(180deg) translateZ(250px) !important; }
-  .gallery-card:nth-child(5) { transform: rotateY(240deg) translateZ(250px) !important; }
-  .gallery-card:nth-child(6) { transform: rotateY(300deg) translateZ(250px) !important; }
-
-  .gallery-card img {
-    transform: translateZ(0);
+    overflow: visible;
   }
 
   .service-icon {
@@ -1079,27 +1041,8 @@ p {
   }
 
   .gallery-stage {
-    min-height: 320px;
+    overflow: visible;
   }
-
-  .gallery-ring {
-    width: 170px;
-    height: 230px;
-    padding-bottom: 0;
-  }
-
-  .gallery-card {
-    width: auto;
-    height: auto;
-    border-radius: 22px;
-  }
-
-  .gallery-card:nth-child(1) { transform: rotateY(0deg) translateZ(190px) !important; }
-  .gallery-card:nth-child(2) { transform: rotateY(60deg) translateZ(190px) !important; }
-  .gallery-card:nth-child(3) { transform: rotateY(120deg) translateZ(190px) !important; }
-  .gallery-card:nth-child(4) { transform: rotateY(180deg) translateZ(190px) !important; }
-  .gallery-card:nth-child(5) { transform: rotateY(240deg) translateZ(190px) !important; }
-  .gallery-card:nth-child(6) { transform: rotateY(300deg) translateZ(190px) !important; }
 
   .gallery-card span {
     font-size: 1.5rem;
