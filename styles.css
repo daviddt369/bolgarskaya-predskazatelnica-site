@@ -906,22 +906,22 @@ p {
   }
 
   .gallery-stage {
-    perspective: 1400px;
-    min-height: 460px;
+    perspective: 1700px;
+    min-height: 430px;
     display: grid;
     place-items: center;
     overflow: hidden;
-    padding: 10px 0 6px;
+    padding: 6px 0 2px;
   }
 
   .gallery-ring {
     position: relative;
-    width: 280px;
-    height: 340px;
+    width: 228px;
+    height: 300px;
     display: block;
     padding: 0;
     transform-style: preserve-3d;
-    animation: rotateRing 20s linear infinite;
+    animation: rotateRing 16s linear infinite;
   }
 
   .gallery-card {
@@ -936,12 +936,12 @@ p {
     will-change: transform;
   }
 
-  .gallery-card:nth-child(1) { transform: rotateY(0deg) translateZ(340px) !important; }
-  .gallery-card:nth-child(2) { transform: rotateY(60deg) translateZ(340px) !important; }
-  .gallery-card:nth-child(3) { transform: rotateY(120deg) translateZ(340px) !important; }
-  .gallery-card:nth-child(4) { transform: rotateY(180deg) translateZ(340px) !important; }
-  .gallery-card:nth-child(5) { transform: rotateY(240deg) translateZ(340px) !important; }
-  .gallery-card:nth-child(6) { transform: rotateY(300deg) translateZ(340px) !important; }
+  .gallery-card:nth-child(1) { transform: rotateY(0deg) translateZ(215px) !important; }
+  .gallery-card:nth-child(2) { transform: rotateY(60deg) translateZ(215px) !important; }
+  .gallery-card:nth-child(3) { transform: rotateY(120deg) translateZ(215px) !important; }
+  .gallery-card:nth-child(4) { transform: rotateY(180deg) translateZ(215px) !important; }
+  .gallery-card:nth-child(5) { transform: rotateY(240deg) translateZ(215px) !important; }
+  .gallery-card:nth-child(6) { transform: rotateY(300deg) translateZ(215px) !important; }
 
   .gallery-card img {
     transform: translateZ(0);
@@ -993,6 +993,11 @@ p {
   }
 
   .section.about {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  .section.services {
     padding-top: 18px;
   }
 }
@@ -1074,12 +1079,12 @@ p {
   }
 
   .gallery-stage {
-    min-height: 430px;
+    min-height: 390px;
   }
 
   .gallery-ring {
-    width: 240px;
-    height: 300px;
+    width: 210px;
+    height: 280px;
     padding-bottom: 0;
   }
 
