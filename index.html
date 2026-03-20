@@ -298,6 +298,48 @@
       });
     }
 
+    const mobileGallerySources = [
+      {
+        small: './galereya/mobile/0cd0e316cc579523cbec7d080ed7f6e2-m.jpg',
+        full: './galereya/0cd0e316cc579523cbec7d080ed7f6e2.jpg',
+        fullWidth: 1536
+      },
+      {
+        small: './galereya/mobile/356244f5877bd0508fbacdd00c101af1-m.jpg',
+        full: './galereya/356244f5877bd0508fbacdd00c101af1.jpg',
+        fullWidth: 960
+      },
+      {
+        small: './galereya/mobile/WhatsApp Image 2026-03-19 at 22.16.08 (1)-m.jpg',
+        full: './galereya/WhatsApp Image 2026-03-19 at 22.16.08 (1).jpeg',
+        fullWidth: 960
+      },
+      {
+        small: './galereya/mobile/WhatsApp Image 2026-03-19 at 22.16.09-m.jpg',
+        full: './galereya/WhatsApp Image 2026-03-19 at 22.16.09.jpeg',
+        fullWidth: 960
+      },
+      {
+        small: './galereya/mobile/WhatsApp Image 2026-03-19 at 12.39.12-m.jpg',
+        full: './galereya/WhatsApp Image 2026-03-19 at 12.39.12.jpeg',
+        fullWidth: 719
+      },
+      {
+        small: './galereya/mobile/5ac0d5cc43450b882560a8a88c96bb0c-m.jpg',
+        full: './galereya/5ac0d5cc43450b882560a8a88c96bb0c.jpg',
+        fullWidth: 736
+      }
+    ];
+
+    document.querySelectorAll('.gallery-card img').forEach((image, index) => {
+      const source = mobileGallerySources[index];
+      if (!source) return;
+      image.loading = 'lazy';
+      image.decoding = 'async';
+      image.sizes = '(max-width: 980px) 220px, 280px';
+      image.srcset = `${encodeURI(source.small)} 420w, ${encodeURI(source.full)} ${source.fullWidth}w`;
+    });
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
