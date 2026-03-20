@@ -392,6 +392,28 @@
       window.addEventListener('resize', applyGalleryLayout);
     }
 
+    const heroPhoneItem = document.querySelector('.hero-points li:last-child');
+    if (heroPhoneItem) {
+      heroPhoneItem.classList.add('hero-phone-item');
+      heroPhoneItem.innerHTML = 'Телефон для связи <a class="inline-link hero-phone-link" href="tel:+77716670643">+7 771 667 06 43</a>';
+    }
+
+    const contactHeading = document.querySelector('.contact-copy h2');
+    const contactParagraph = document.querySelector('.contact-copy p');
+    const contactPhone = document.querySelector('.contact-phone');
+
+    if (contactHeading) {
+      contactHeading.textContent = 'Связь и запись на консультацию';
+    }
+
+    if (contactParagraph) {
+      contactParagraph.textContent = 'Со мной можно связаться через WhatsApp, Telegram или по телефону. Если вы хотите записаться на консультацию, задать важный вопрос или разобраться в непростой ситуации - напишите мне или позвоните. Кратко опишите ваш запрос, и я подскажу, какой формат обращения подойдет лучше, и согласую с вами удобное время.';
+    }
+
+    if (contactPhone) {
+      contactPhone.innerHTML = '<a class="inline-link contact-phone-link" href="tel:+77716670643">+7 771 667 06 43</a>';
+    }
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
