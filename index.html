@@ -300,36 +300,56 @@
 
     const mobileGallerySources = [
       {
-        small: './galereya/mobile/0cd0e316cc579523cbec7d080ed7f6e2-m.jpg',
-        full: './galereya/0cd0e316cc579523cbec7d080ed7f6e2.jpg',
+        small: './galereya/mobile/0cd0e316cc579523cbec7d080ed7f6e2-m.webp',
+        full: './galereya/0cd0e316cc579523cbec7d080ed7f6e2.webp',
         fullWidth: 1536
       },
       {
-        small: './galereya/mobile/356244f5877bd0508fbacdd00c101af1-m.jpg',
-        full: './galereya/356244f5877bd0508fbacdd00c101af1.jpg',
+        small: './galereya/mobile/356244f5877bd0508fbacdd00c101af1-m.webp',
+        full: './galereya/356244f5877bd0508fbacdd00c101af1.webp',
         fullWidth: 960
       },
       {
-        small: './galereya/mobile/WhatsApp Image 2026-03-19 at 22.16.08 (1)-m.jpg',
-        full: './galereya/WhatsApp Image 2026-03-19 at 22.16.08 (1).jpeg',
+        small: './galereya/mobile/WhatsApp Image 2026-03-19 at 22.16.08 (1)-m.webp',
+        full: './galereya/WhatsApp Image 2026-03-19 at 22.16.08 (1).webp',
         fullWidth: 960
       },
       {
-        small: './galereya/mobile/WhatsApp Image 2026-03-19 at 22.16.09-m.jpg',
-        full: './galereya/WhatsApp Image 2026-03-19 at 22.16.09.jpeg',
+        small: './galereya/mobile/WhatsApp Image 2026-03-19 at 22.16.09-m.webp',
+        full: './galereya/WhatsApp Image 2026-03-19 at 22.16.09.webp',
         fullWidth: 960
       },
       {
-        small: './galereya/mobile/WhatsApp Image 2026-03-19 at 12.39.12-m.jpg',
-        full: './galereya/WhatsApp Image 2026-03-19 at 12.39.12.jpeg',
+        small: './galereya/mobile/WhatsApp Image 2026-03-19 at 12.39.12-m.webp',
+        full: './galereya/WhatsApp Image 2026-03-19 at 12.39.12.webp',
         fullWidth: 719
       },
       {
-        small: './galereya/mobile/5ac0d5cc43450b882560a8a88c96bb0c-m.jpg',
-        full: './galereya/5ac0d5cc43450b882560a8a88c96bb0c.jpg',
+        small: './galereya/mobile/5ac0d5cc43450b882560a8a88c96bb0c-m.webp',
+        full: './galereya/5ac0d5cc43450b882560a8a88c96bb0c.webp',
         fullWidth: 736
       }
     ];
+
+    const heroImage = document.querySelector('.hero-inline-photo img');
+    if (heroImage) {
+      heroImage.src = './glav.webp';
+      heroImage.loading = 'eager';
+      heroImage.decoding = 'async';
+    }
+
+    const certificateSources = [
+      './sert/01-1086x759.webp',
+      './sert/4a757a47209e302b7dd62d08b426293e.webp'
+    ];
+
+    document.querySelectorAll('.certificate-inner img').forEach((image, index) => {
+      if (certificateSources[index]) {
+        image.src = certificateSources[index];
+        image.loading = 'lazy';
+        image.decoding = 'async';
+      }
+    });
 
     document.querySelectorAll('.gallery-card img').forEach((image, index) => {
       const source = mobileGallerySources[index];

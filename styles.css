@@ -38,7 +38,7 @@ body::after {
   z-index: 0;
   background:
     linear-gradient(180deg, rgba(18, 11, 28, 0.38), rgba(10, 7, 16, 0.5)),
-    url("./fon.jpg") center center / cover no-repeat;
+    url("./fon.webp") center center / cover no-repeat;
   opacity: 0.24;
   mix-blend-mode: screen;
 }
