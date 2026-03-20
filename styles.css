@@ -642,6 +642,10 @@ p {
   overflow: hidden;
 }
 
+.section.gallery {
+  padding-bottom: 82px;
+}
+
 .gallery-ring {
   position: relative;
   width: 280px;
@@ -962,6 +966,10 @@ p {
   .section.services {
     padding-top: 18px;
   }
+
+  .section.gallery {
+    padding-bottom: 104px;
+  }
 }
 
 @media (max-width: 760px) {
@@ -1042,6 +1050,10 @@ p {
 
   .gallery-stage {
     overflow: visible;
+  }
+
+  .section.gallery {
+    padding-bottom: 116px;
   }
 
   .gallery-card span {
