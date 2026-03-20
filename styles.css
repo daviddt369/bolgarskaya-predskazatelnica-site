@@ -458,29 +458,24 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
 
-.hero-phone-link {
-  display: inline-block;
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(1.35rem, 2.1vw, 1.9rem);
-  line-height: 1;
-  letter-spacing: 0.04em;
-  color: var(--gold-strong);
-}
-
-.hero-phone-item {
-  display: flex;
-  flex-direction: column;
+.hero-phone-link,
+.contact-phone-link {
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
-}
-
-.hero-phone-link {
-  display: inline-block;
+  justify-content: center;
+  min-height: 54px;
+  padding: 0 24px;
+  border-radius: 999px;
+  border: 1px solid rgba(240, 200, 133, 0.38);
+  background: linear-gradient(135deg, rgba(216, 176, 106, 0.18), rgba(183, 127, 44, 0.3));
+  box-shadow:
+    0 14px 34px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 236, 205, 0.15);
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(1.35rem, 2.2vw, 2rem);
+  font-size: clamp(1.35rem, 2.1vw, 1.95rem);
   line-height: 1;
   letter-spacing: 0.04em;
   color: var(--gold-strong);
@@ -828,17 +823,14 @@ p {
 }
 
 .contact-phone {
-  margin-top: 6px;
+  margin-top: 10px;
   font-weight: 600;
 }
 
 .contact-phone-link {
-  display: inline-block;
-  font-family: "Cormorant Garamond", serif;
+  min-height: 62px;
+  padding: 0 30px;
   font-size: clamp(1.8rem, 3.4vw, 2.8rem);
-  line-height: 1;
-  letter-spacing: 0.04em;
-  color: var(--gold-strong);
 }
 
 .inline-link {
