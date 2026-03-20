@@ -806,6 +806,12 @@ p {
   100% { transform: perspective(900px) rotateY(-16deg) rotateX(3deg) translateY(0); }
 }
 
+@keyframes serviceSwingSoft {
+  0% { transform: perspective(800px) rotateY(-8deg) rotateX(2deg) translateY(0); }
+  50% { transform: perspective(800px) rotateY(8deg) rotateX(-2deg) translateY(-2px); }
+  100% { transform: perspective(800px) rotateY(-8deg) rotateX(2deg) translateY(0); }
+}
+
 @keyframes sparkRise {
   0% {
     transform: translate3d(0, 0, 0) scale(0.85);
@@ -845,6 +851,11 @@ p {
 }
 
 @media (max-width: 980px) {
+  body::after {
+    opacity: 0.16;
+    mix-blend-mode: normal;
+  }
+
   .hero-grid,
   .manifesto-inner,
   .contact-card,
@@ -894,20 +905,93 @@ p {
   }
 
   .gallery-stage {
-    min-height: 380px;
+    perspective: 1200px;
+    min-height: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: block;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    padding: 8px 2px 4px;
   }
 
   .gallery-ring {
-    width: 220px;
-    height: 290px;
+    width: max-content;
+    height: auto;
+    display: flex;
+    gap: 16px;
+    padding: 10px 6px 20px;
+    animation: none;
+    transform: none;
   }
 
-  .gallery-card:nth-child(1) { transform: rotateY(0deg) translateZ(250px); }
-  .gallery-card:nth-child(2) { transform: rotateY(60deg) translateZ(250px); }
-  .gallery-card:nth-child(3) { transform: rotateY(120deg) translateZ(250px); }
-  .gallery-card:nth-child(4) { transform: rotateY(180deg) translateZ(250px); }
-  .gallery-card:nth-child(5) { transform: rotateY(240deg) translateZ(250px); }
-  .gallery-card:nth-child(6) { transform: rotateY(300deg) translateZ(250px); }
+  .gallery-stage::-webkit-scrollbar {
+    display: none;
+  }
+
+  .gallery-card {
+    position: relative;
+    inset: auto;
+    width: 220px;
+    height: 290px;
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    will-change: transform;
+  }
+
+  .gallery-card:nth-child(odd) {
+    transform: perspective(1000px) rotateY(-13deg) rotateX(2deg) translateY(4px) !important;
+  }
+
+  .gallery-card:nth-child(even) {
+    transform: perspective(1000px) rotateY(13deg) rotateX(-2deg) translateY(-4px) !important;
+  }
+
+  .service-icon {
+    animation: none;
+    transform: none;
+    will-change: auto;
+  }
+
+  .service-icon img {
+    animation: serviceSwingSoft 6.6s ease-in-out infinite;
+    transform-origin: center center;
+    backface-visibility: hidden;
+    will-change: transform;
+  }
+
+  .service-card:hover .service-icon,
+  .service-card:hover .service-icon img {
+    transform: none;
+  }
+
+  .reveal,
+  .reveal-delay,
+  .reveal-delay-2 {
+    opacity: 0;
+    transform: none;
+    filter: blur(8px);
+    transition: opacity 0.65s ease, filter 0.65s ease;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+
+  .topbar,
+  .glass-card,
+  .service-card,
+  .manifesto-inner,
+  .review-card,
+  .contact-card,
+  .portrait-frame {
+    backdrop-filter: blur(8px);
+  }
 }
 
 @media (max-width: 760px) {
@@ -977,8 +1061,8 @@ p {
   }
 
   .service-icon img {
-    width: 94px;
-    height: 94px;
+    width: 104px;
+    height: 104px;
   }
 
   .hero-inline-photo {
@@ -987,15 +1071,17 @@ p {
   }
 
   .gallery-stage {
-    min-height: 320px;
+    min-height: auto;
   }
 
   .gallery-ring {
-    width: 170px;
-    height: 230px;
+    gap: 14px;
+    padding-bottom: 18px;
   }
 
   .gallery-card {
+    width: 170px;
+    height: 230px;
     border-radius: 22px;
   }
 
@@ -1003,10 +1089,4 @@ p {
     font-size: 1.5rem;
   }
 
-  .gallery-card:nth-child(1) { transform: rotateY(0deg) translateZ(190px); }
-  .gallery-card:nth-child(2) { transform: rotateY(60deg) translateZ(190px); }
-  .gallery-card:nth-child(3) { transform: rotateY(120deg) translateZ(190px); }
-  .gallery-card:nth-child(4) { transform: rotateY(180deg) translateZ(190px); }
-  .gallery-card:nth-child(5) { transform: rotateY(240deg) translateZ(190px); }
-  .gallery-card:nth-child(6) { transform: rotateY(300deg) translateZ(190px); }
 }
