@@ -867,6 +867,7 @@ p {
 
   .hero-grid {
     display: grid;
+    padding-bottom: 0;
   }
 
   .hero-topline {
@@ -905,8 +906,8 @@ p {
   }
 
   .gallery-stage {
-    perspective: 1200px;
-    min-height: 430px;
+    perspective: 1400px;
+    min-height: 460px;
     display: grid;
     place-items: center;
     overflow: hidden;
@@ -915,12 +916,12 @@ p {
 
   .gallery-ring {
     position: relative;
-    width: 250px;
-    height: 320px;
+    width: 280px;
+    height: 340px;
     display: block;
     padding: 0;
     transform-style: preserve-3d;
-    animation: rotateRing 22s linear infinite;
+    animation: rotateRing 20s linear infinite;
   }
 
   .gallery-card {
@@ -935,12 +936,12 @@ p {
     will-change: transform;
   }
 
-  .gallery-card:nth-child(1) { transform: rotateY(0deg) translateZ(290px) !important; }
-  .gallery-card:nth-child(2) { transform: rotateY(60deg) translateZ(290px) !important; }
-  .gallery-card:nth-child(3) { transform: rotateY(120deg) translateZ(290px) !important; }
-  .gallery-card:nth-child(4) { transform: rotateY(180deg) translateZ(290px) !important; }
-  .gallery-card:nth-child(5) { transform: rotateY(240deg) translateZ(290px) !important; }
-  .gallery-card:nth-child(6) { transform: rotateY(300deg) translateZ(290px) !important; }
+  .gallery-card:nth-child(1) { transform: rotateY(0deg) translateZ(340px) !important; }
+  .gallery-card:nth-child(2) { transform: rotateY(60deg) translateZ(340px) !important; }
+  .gallery-card:nth-child(3) { transform: rotateY(120deg) translateZ(340px) !important; }
+  .gallery-card:nth-child(4) { transform: rotateY(180deg) translateZ(340px) !important; }
+  .gallery-card:nth-child(5) { transform: rotateY(240deg) translateZ(340px) !important; }
+  .gallery-card:nth-child(6) { transform: rotateY(300deg) translateZ(340px) !important; }
 
   .gallery-card img {
     transform: translateZ(0);
@@ -967,10 +968,12 @@ p {
   .reveal,
   .reveal-delay,
   .reveal-delay-2 {
-    opacity: 1;
+    opacity: 0;
     transform: none;
     filter: none;
-    transition: none;
+    transition: opacity 0.42s ease-out;
+    transition-delay: 0s;
+    will-change: opacity;
   }
 
   .reveal.is-visible {
@@ -987,6 +990,10 @@ p {
   .contact-card,
   .portrait-frame {
     backdrop-filter: blur(8px);
+  }
+
+  .section.about {
+    padding-top: 18px;
   }
 }
 
@@ -1067,17 +1074,18 @@ p {
   }
 
   .gallery-stage {
-    min-height: auto;
+    min-height: 430px;
   }
 
   .gallery-ring {
-    gap: 14px;
-    padding-bottom: 18px;
+    width: 240px;
+    height: 300px;
+    padding-bottom: 0;
   }
 
   .gallery-card {
-    width: 170px;
-    height: 230px;
+    width: auto;
+    height: auto;
     border-radius: 22px;
   }
 
