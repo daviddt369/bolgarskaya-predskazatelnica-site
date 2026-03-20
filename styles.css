@@ -1113,6 +1113,14 @@ p {
     max-width: 100%;
   }
 
+  .contact-phone-link {
+    min-height: 58px;
+    padding: 0 22px;
+    font-size: clamp(1.15rem, 6vw, 1.9rem);
+    line-height: 1;
+    white-space: nowrap;
+  }
+
   .gallery-stage {
     min-height: 320px;
   }
