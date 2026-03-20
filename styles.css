@@ -364,10 +364,11 @@ p {
   display: block;
   width: 100%;
   aspect-ratio: 5 / 5.9;
-  padding: 10px;
+  padding: 0;
   box-sizing: border-box;
-  object-fit: contain;
-  object-position: center;
+  border-radius: 28px;
+  object-fit: cover;
+  object-position: center top;
 }
 
 .hero-actions,
