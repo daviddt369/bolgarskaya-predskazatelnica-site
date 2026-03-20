@@ -906,22 +906,22 @@ p {
   }
 
   .gallery-stage {
-    perspective: 1700px;
-    min-height: 430px;
+    perspective: 1400px;
+    min-height: 380px;
     display: grid;
     place-items: center;
     overflow: hidden;
-    padding: 6px 0 2px;
+    padding: 10px 0 6px;
   }
 
   .gallery-ring {
     position: relative;
-    width: 228px;
-    height: 300px;
+    width: 220px;
+    height: 290px;
     display: block;
     padding: 0;
     transform-style: preserve-3d;
-    animation: rotateRing 16s linear infinite;
+    animation: rotateRing 20s linear infinite;
   }
 
   .gallery-card {
@@ -936,12 +936,12 @@ p {
     will-change: transform;
   }
 
-  .gallery-card:nth-child(1) { transform: rotateY(0deg) translateZ(215px) !important; }
-  .gallery-card:nth-child(2) { transform: rotateY(60deg) translateZ(215px) !important; }
-  .gallery-card:nth-child(3) { transform: rotateY(120deg) translateZ(215px) !important; }
-  .gallery-card:nth-child(4) { transform: rotateY(180deg) translateZ(215px) !important; }
-  .gallery-card:nth-child(5) { transform: rotateY(240deg) translateZ(215px) !important; }
-  .gallery-card:nth-child(6) { transform: rotateY(300deg) translateZ(215px) !important; }
+  .gallery-card:nth-child(1) { transform: rotateY(0deg) translateZ(250px) !important; }
+  .gallery-card:nth-child(2) { transform: rotateY(60deg) translateZ(250px) !important; }
+  .gallery-card:nth-child(3) { transform: rotateY(120deg) translateZ(250px) !important; }
+  .gallery-card:nth-child(4) { transform: rotateY(180deg) translateZ(250px) !important; }
+  .gallery-card:nth-child(5) { transform: rotateY(240deg) translateZ(250px) !important; }
+  .gallery-card:nth-child(6) { transform: rotateY(300deg) translateZ(250px) !important; }
 
   .gallery-card img {
     transform: translateZ(0);
@@ -1079,12 +1079,12 @@ p {
   }
 
   .gallery-stage {
-    min-height: 390px;
+    min-height: 320px;
   }
 
   .gallery-ring {
-    width: 210px;
-    height: 280px;
+    width: 170px;
+    height: 230px;
     padding-bottom: 0;
   }
 
@@ -1093,6 +1093,13 @@ p {
     height: auto;
     border-radius: 22px;
   }
+
+  .gallery-card:nth-child(1) { transform: rotateY(0deg) translateZ(190px) !important; }
+  .gallery-card:nth-child(2) { transform: rotateY(60deg) translateZ(190px) !important; }
+  .gallery-card:nth-child(3) { transform: rotateY(120deg) translateZ(190px) !important; }
+  .gallery-card:nth-child(4) { transform: rotateY(180deg) translateZ(190px) !important; }
+  .gallery-card:nth-child(5) { transform: rotateY(240deg) translateZ(190px) !important; }
+  .gallery-card:nth-child(6) { transform: rotateY(300deg) translateZ(190px) !important; }
 
   .gallery-card span {
     font-size: 1.5rem;
