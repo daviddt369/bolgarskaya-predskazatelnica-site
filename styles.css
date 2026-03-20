@@ -940,10 +940,12 @@ p {
   }
 
   .service-icon img {
-    animation: serviceSwingSoft 6.6s ease-in-out infinite;
+    animation: none;
+    transform: none;
     transform-origin: center center;
     backface-visibility: hidden;
-    will-change: transform;
+    will-change: auto;
+    filter: drop-shadow(0 10px 20px rgba(216, 176, 106, 0.18));
   }
 
   .service-card:hover .service-icon,
@@ -975,7 +977,20 @@ p {
   .review-card,
   .contact-card,
   .portrait-frame {
-    backdrop-filter: blur(8px);
+    backdrop-filter: none;
+  }
+
+  .certificate-card {
+    perspective: none;
+  }
+
+  .gallery-ring {
+    animation-duration: 28s;
+    will-change: auto;
+  }
+
+  .gallery-card {
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.26);
   }
 
   .section.about {
@@ -1077,7 +1092,7 @@ p {
   .gallery-ring {
     width: 184px;
     height: 242px;
-    animation-duration: 26s;
+    animation-duration: 30s;
   }
 
   .gallery-card:nth-child(1) { transform: rotateY(0deg) translateZ(176px); }
