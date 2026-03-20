@@ -867,25 +867,40 @@ p {
   }
 
   body {
+    position: relative;
     background:
-      linear-gradient(180deg, rgba(18, 11, 28, 0.38), rgba(10, 7, 16, 0.5)),
-      url("./fon.webp") center center / cover no-repeat,
       radial-gradient(circle at top, rgba(179, 118, 215, 0.16), transparent 30%),
       radial-gradient(circle at 80% 18%, rgba(216, 176, 106, 0.13), transparent 24%),
       linear-gradient(180deg, #0a0710 0%, #110b18 42%, #191023 100%);
   }
 
   body::before {
-    display: none;
+    position: absolute;
+    inset: 0;
+    opacity: 0.35;
   }
 
   body::after {
+    display: block;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background:
+      linear-gradient(180deg, rgba(18, 11, 28, 0.38), rgba(10, 7, 16, 0.5)),
+      url("./fon.webp") center center / cover no-repeat;
+    opacity: 0.24;
+    mix-blend-mode: screen;
+  }
+
+  .sparkles {
     display: none;
   }
 
-  .sparkles,
   .aurora {
-    display: none;
+    display: block;
+    position: absolute;
+    z-index: 0;
   }
 
   .hero-grid,
