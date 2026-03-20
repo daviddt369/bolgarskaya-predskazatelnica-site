@@ -566,7 +566,7 @@ p {
     0 20px 55px rgba(0, 0, 0, 0.28),
     inset 0 1px 0 rgba(255, 233, 192, 0.08),
     0 0 0 1px rgba(216, 176, 106, 0.08);
-  padding-top: 10px;
+  padding-top: 4px;
 }
 
 .glass-card::after,
@@ -607,9 +607,9 @@ p {
 .service-icon {
   display: grid;
   place-items: center;
-  width: 130px;
-  height: 130px;
-  margin: -10px auto 12px;
+  width: 195px;
+  height: 195px;
+  margin: -22px auto 2px;
   background: transparent;
   border: 0;
   box-shadow: none;
@@ -619,10 +619,18 @@ p {
 }
 
 .service-icon img {
-  width: 102px;
-  height: 102px;
+  width: 153px;
+  height: 153px;
   object-fit: contain;
   filter: drop-shadow(0 12px 26px rgba(216, 176, 106, 0.24));
+}
+
+.service-card h3 {
+  margin-top: -2px;
+}
+
+.service-card p {
+  margin-top: 6px;
 }
 
 .service-card:hover .service-icon {
@@ -1041,14 +1049,14 @@ p {
   }
 
   .service-icon {
-    width: 138px;
-    height: 138px;
-    margin: -8px auto 12px;
+    width: 174px;
+    height: 174px;
+    margin: -18px auto 4px;
   }
 
   .service-icon img {
-    width: 106px;
-    height: 106px;
+    width: 144px;
+    height: 144px;
   }
 
   .hero-inline-photo {
