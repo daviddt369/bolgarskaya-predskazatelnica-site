@@ -866,16 +866,33 @@ p {
     scroll-behavior: auto;
   }
 
-  body::before,
-  body::after,
-  .sparkles,
-  .aurora {
-    display: none;
+  body {
+    background:
+      linear-gradient(180deg, rgba(11, 7, 16, 0.76), rgba(17, 11, 24, 0.84)),
+      url("./fon.webp") center top / cover no-repeat,
+      radial-gradient(circle at top, rgba(179, 118, 215, 0.13), transparent 30%),
+      radial-gradient(circle at 80% 18%, rgba(216, 176, 106, 0.1), transparent 24%),
+      linear-gradient(180deg, #0a0710 0%, #110b18 42%, #191023 100%);
+  }
+
+  body::before {
+    position: absolute;
+    inset: 0;
+    opacity: 0.18;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.08) 0 1px, transparent 2px),
+      radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 0 1px, transparent 2px),
+      radial-gradient(circle at 50% 80%, rgba(255, 255, 255, 0.06) 0 1px, transparent 2px);
+    background-size: 220px 220px, 300px 300px, 260px 260px;
   }
 
   body::after {
-    opacity: 0.16;
-    mix-blend-mode: normal;
+    display: none;
+  }
+
+  .sparkles,
+  .aurora {
+    display: none;
   }
 
   .hero-grid,
