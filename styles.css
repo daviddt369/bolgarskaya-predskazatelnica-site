@@ -857,6 +857,7 @@ p {
   margin-top: 24px;
 }
 
+.tv-link-button,
 .tv-link-placeholder {
   display: inline-flex;
   align-items: center;
@@ -872,6 +873,40 @@ p {
   font-family: "Manrope", sans-serif;
   font-size: 1rem;
   font-weight: 700;
+}
+
+.tv-link-button {
+  gap: 12px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.tv-link-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 38px rgba(0, 0, 0, 0.26);
+  filter: saturate(1.06);
+}
+
+.tv-link-icon {
+  position: relative;
+  width: 28px;
+  height: 20px;
+  border-radius: 999px;
+  background: rgba(255, 244, 244, 0.92);
+  flex: 0 0 auto;
+}
+
+.tv-link-icon::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-38%, -50%);
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 10px solid #d42020;
 }
 
 .gallery-note {
