@@ -928,6 +928,19 @@ p {
   font-size: clamp(1.8rem, 3.4vw, 2.8rem);
 }
 
+.site-footer {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0 28px;
+}
+
+.metrics-informer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 .inline-link {
   color: var(--gold);
 }
